@@ -33,10 +33,15 @@ function App() {
     console.log([expenseData, ...baseExpenses]);
   };
 
+  const deleteItemHandler = (id) => {
+    const reducedExpenses = baseExpenses.filter((item) => item.id !== id);
+    setBaseExpenses(reducedExpenses);
+  };
+
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={baseExpenses} />
+      <Expenses items={baseExpenses} deleteItem={deleteItemHandler} />
     </div>
   );
 }

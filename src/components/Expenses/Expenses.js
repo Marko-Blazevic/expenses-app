@@ -13,18 +13,16 @@ const Expenses = (props) => {
   const filteredExpenses = props.items.filter((expense) => {
     return expense.date.getFullYear().toString() === year;
   });
+  const deleteItem = (id) => {
+    props.deleteItem(id);
+  };
 
   return (
-    <React.Fragment>
-      <Card className='expenses'>
-        <ExpensesFilter
-          onSelectYear={onSelectYearHandler}
-          selectedYear={year}
-        />
-        <ExpensesChart items={filteredExpenses} />
-        <ExpensesList items={filteredExpenses} />
-      </Card>
-    </React.Fragment>
+    <Card className='expenses'>
+      <ExpensesFilter onSelectYear={onSelectYearHandler} selectedYear={year} />
+      <ExpensesChart items={filteredExpenses} />
+      <ExpensesList items={filteredExpenses} deleteItem={deleteItem} />
+    </Card>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import './ExpenseForm.css';
+import Button from '../UI/Button';
 
 const ExpenseForm = (props) => {
   const titleInputRef = useRef();
@@ -52,8 +53,8 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className='new-expense__actions'>
-        <button onClick={onCancelButtonClick}>Cancel</button>
-        <button type='submit'>Add Expense</button>
+        <Button onClick={onCancelButtonClick}>Cancel</Button>
+        <Button type='submit'>Add Expense</Button>
       </div>
     </form>
   );

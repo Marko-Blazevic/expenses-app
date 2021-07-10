@@ -1,4 +1,5 @@
 import './NewExpense.css';
+import Button from '../UI/Button';
 
 const NewExpenseToggle = (props) => {
   const addNewExpense = () => {
@@ -7,7 +8,7 @@ const NewExpenseToggle = (props) => {
 
   return (
     <div>
-      <button onClick={addNewExpense}>Add New Expense</button>
+      <Button onClick={addNewExpense}>Add New Expense</Button>
     </div>
   );
 };

@@ -17,6 +17,11 @@
   flex: 1;
 }
 
+.expense-item__description button {
+  font-size: smaller;
+  padding: 0.5rem;
+}
+
 .expense-item h2 {
   color: #3a3a3a;
   font-size: 1rem;
