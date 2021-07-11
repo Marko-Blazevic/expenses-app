@@ -1,0 +1,42 @@
+.modal {
+  position: fixed;
+  top: 30vh;
+  left: 35%;
+  width: 30%;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #a892ee;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.message {
+  font-family: inherit;
+  background-color: ivory;
+  text-align: center;
+  font-size: larger;
+  padding: 1rem;
+}
+
+.footer {
+  background-color: ivory;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer button {
+  width: 30%;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
