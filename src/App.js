@@ -1,6 +1,8 @@
+import React from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 import { useState } from 'react';
+import DelItemContext from './context/delete-item-context';
 
 const DUMMY_EXPENSES = [
   {
@@ -23,6 +25,7 @@ const DUMMY_EXPENSES = [
     date: new Date(2021, 5, 12),
   },
 ];
+
 function App() {
   const [baseExpenses, setBaseExpenses] = useState(DUMMY_EXPENSES);
 
@@ -39,10 +42,10 @@ function App() {
   };
 
   return (
-    <div>
+    <DelItemContext.Provider value={{ delItem: deleteItemHandler }}>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={baseExpenses} deleteItem={deleteItemHandler} />
-    </div>
+      <Expenses items={baseExpenses} />
+    </DelItemContext.Provider>
   );
 }
 
